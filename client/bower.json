@@ -1,0 +1,23 @@
+{
+  "name": "myblog",
+  "authors": [
+    "chenyu <a13868300128a@126.com>"
+  ],
+  "description": "blog",
+  "main": "",
+  "keywords": [
+    "blog"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
