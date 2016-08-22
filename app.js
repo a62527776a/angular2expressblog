@@ -5,7 +5,7 @@ var crypto = require('crypto');
 var createSession = require('./server/script/session');
 var routes = require('./server/routes/app.routes');
 var app = express();
-app.use('/client',express.static(path.join(__dirname,'client')));
+app.use('/client',express.static(path.join(__dirname,'/client')));
 app.use('/node_modules',express.static(path.join(__dirname,'node_modules')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));

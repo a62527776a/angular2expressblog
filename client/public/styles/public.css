@@ -1,3 +1,19 @@
+.col-xs-1,
+.col-xs-2,
+.col-xs-3,
+.col-xs-4,
+.col-xs-5,
+.col-xs-6,
+.col-xs-7,
+.col-xs-8,
+.col-xs-9,
+.col-xs-10,
+.col-xs-11,
+.col-xs-12 {
+    margin:0 !important;
+    padding:0 !important;
+}
+
 /*全局样式*/
 * {
     padding:0 !important;
@@ -5,14 +21,15 @@
     font-size:12px;
 }
 /*边距*/
-.padding-top-12 {
-    padding-top:1em !important;
-}
 .padding-top-6 {
-    padding-top:0.5em !important;
+    padding-top:6px !important;
 }
 
 /*字体颜色*/
 .color-white {
     color:white !important;
+}
+/*背景颜色*/
+.background-white {
+    background: white !important;
 }

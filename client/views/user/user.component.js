@@ -9,16 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var footer_component_1 = require("/client/component/footer/footer.component");
+var router_1 = require('@angular/router');
 var UserComponent = (function () {
     function UserComponent() {
-        this.name = '123';
     }
     UserComponent = __decorate([
         core_1.Component({
             selector: 'user',
             templateUrl: '/client/views/user/user.html',
-            styleUrls: ['/client/views/user/user.css'],
-            directives: []
+            styleUrls: ['./client/views/user/user.css'],
+            directives: [footer_component_1.FooterComponent, router_1.ROUTER_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [])
     ], UserComponent);

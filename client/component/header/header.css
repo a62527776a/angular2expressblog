@@ -1,0 +1,13 @@
+.article-detail-header {
+    background:#337ab7;
+    height:40px;
+    line-height:40px;
+}
+.article-detail-header * {
+    line-height:40px;
+}
+.back-icon {
+    color:white;
+    position:absolute;
+    left:5px;
+}

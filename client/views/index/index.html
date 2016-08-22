@@ -1,1 +1,6 @@
-456
+ <div (click)="gotoDetail()" *ngFor="let article of article" id="{{ article._id }}" class="article-card background-white">
+  <h4 id="{{ article._id }}">{{ article.title }}</h4>
+  <h5 id="{{ article._id }}">{{ article.summary }}</h5>
+  <small id="{{ article._id }}">{{ article.createTime }}</small>
+ </div>
+<footer></footer>

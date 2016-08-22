@@ -1,0 +1,14 @@
+.article-card {
+    height:80px;
+    width:96%;
+    margin:5px 2% 0px 2% !important;
+    padding:3px 8px !important;
+    border-radius:5px;
+    color:#337ab7;
+    position:relative;
+}
+.article-card small {
+    position:absolute;
+    right:3px;
+    bottom:0;
+}

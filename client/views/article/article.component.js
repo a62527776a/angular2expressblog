@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var footer_component_1 = require("/client/component/footer/footer.component");
 var ArticleComponent = (function () {
     function ArticleComponent() {
     }
@@ -16,8 +17,8 @@ var ArticleComponent = (function () {
         core_1.Component({
             selector: 'artcle',
             templateUrl: '/client/views/article/article.html',
-            styleUrls: ['/client/views/article/article.css'],
-            directives: []
+            styleUrls: ['./client/views/article/article.css'],
+            directives: [footer_component_1.FooterComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], ArticleComponent);

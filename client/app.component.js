@@ -10,29 +10,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var article_service_1 = require('./service/article.service');
+// import { ArticleService } from './service/article.service'
 var AppComponent = (function () {
-    function AppComponent(articleService) {
-        this.articleService = articleService;
+    function AppComponent() {
     }
-    ;
-    AppComponent.prototype.OnInit = function () {
-    };
-    AppComponent.prototype.ngOnInit = function () {
-        this.getArticle();
-    };
-    AppComponent.prototype.getArticle = function () {
-        var _this = this;
-        this.articleService.getArticle().then(function (article) { return _this.article = article; });
-    };
     AppComponent = __decorate([
         core_1.Component({
             directives: [router_1.ROUTER_DIRECTIVES],
-            providers: [article_service_1.ArticleService],
+            // providers: [ArticleService],
             selector: 'app',
-            templateUrl: '/client/component/footer/footer.html'
+            template: '<router-outlet></router-outlet>'
         }), 
-        __metadata('design:paramtypes', [article_service_1.ArticleService])
+        __metadata('design:paramtypes', [])
     ], AppComponent);
     return AppComponent;
 }());
