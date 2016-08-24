@@ -1,0 +1,28 @@
+.massage-card {
+    height:80px;
+    width:100%;
+    margin:10px 0 !important;
+    padding:5px 15px !important;
+}
+.massage-card > * {
+    color:#337ab7;
+}
+.massage-card small {
+    position:absolute;
+    right:15px;
+    bottom:10px;
+}
+form {
+    margin-top:50px !important;
+    padding:15px !important;
+}
+form > * {
+    margin-bottom:5px !important;
+    padding:5px !important;
+    border-radius:5px;
+    border:1px solid #337ab7;
+}
+form textarea {
+    height:200px;
+    margin-bottom:15px !important;
+}

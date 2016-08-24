@@ -1,0 +1,8 @@
+<div class="col-xs-12">
+    <table>
+        <tr class="col-xs-12" *ngFor="let article of article">
+            <a class="">{{article.title}}</a>
+            <a (click)="delete(article)" class="pull-right">删除</a>
+        </tr>
+    </table>
+</div>

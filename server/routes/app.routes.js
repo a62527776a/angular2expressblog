@@ -3,6 +3,7 @@ var checkLogin = require('../script/checklogin');
 var models = require('../../database/models/models');
 var User = models.User;
 var Article = models.article;
+var Comment = models.Comment
 var crypto = require('crypto');
 
 module.exports = function (app) {
@@ -104,7 +105,6 @@ module.exports = function (app) {
         Article.find().exec(function(err,arts){
             if(err){
                 console.log(err);
-                return res.redirect('/');
             }
             res.send(arts);
         });
@@ -120,6 +120,37 @@ module.exports = function (app) {
                 console.log(err);
             }
             console.log('文章发表成功');
+        })
+    })
+    app.delete('/article/post/:id',function(req,res){
+        var id = req.params.id;
+        Article.remove({_id:id}).exec(function(err,arts){
+            if(err){
+                console.log(err);
+            }
+            res.send(arts);
+        })
+    })
+    app.get('/api/comment',function(req,res){
+        Comment.find().exec(function(err,arts){
+            if(err){
+                console.log(err);
+            }
+            res.send(arts);
+        });
+    })
+    app.post('/api/comment',function(req,res){
+        var comment = new Comment({
+            name: req.body.comment_name,
+            content: req.body.comment_content
+        });
+
+        comment.save(function(err, doc){
+            if(err){
+                console.log(err);
+            }
+            console.log('留言发布成功');
+            res.send(doc);
         })
     })
 }

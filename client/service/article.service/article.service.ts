@@ -27,7 +27,7 @@ export class ArticleService {
 		console.log("_id" + _id);
 		return this.http.get(this.articleDetailUrl + '/' + _id)
 			.toPromise()
-			.then(response => response.json())
+			.then(response => response.json() as ArticleModel[])
 			.catch(this.handleError);
 	}
 	private post(ArticleModel: ArticleModel): Promise<ArticleModel> {
@@ -38,6 +38,16 @@ export class ArticleService {
 			.post(this.postArticleUrl, JSON.stringify(ArticleModel), {headers: headers})
 			.toPromise()
 			.then(res => res.json())
+			.catch(this.handleError);
+	}
+	delete(ArticleModel: ArticleModel): Promise<Response> {
+		let headers = new Headers();
+		headers.append('Content-Type', 'application/json');
+
+		let url = `${this.postArticleUrl}/${ArticleModel._id}`;
+		return this.http
+			.delete(url, {headers: headers})
+			.toPromise()
 			.catch(this.handleError);
 	}
 }

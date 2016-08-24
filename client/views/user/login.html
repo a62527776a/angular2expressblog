@@ -10,6 +10,9 @@
     <div [routerLink]="['/post']" *ngIf="login_status.login_status == 200">
         发表文章
     </div>
+    <div [routerLink]="['/delete']" *ngIf="login_status.login_status == 200">
+        删除文章
+    </div>
     <div *ngIf="login_status.login_status == 400">
         登录错误
     </div>

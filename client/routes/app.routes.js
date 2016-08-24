@@ -6,6 +6,7 @@ var user_component_1 = require('../../client/views/user/user.component');
 var article_detail_component_1 = require('../../client/views/article/article-detail.component');
 var login_component_1 = require("../views/user/login.component");
 var post_component_1 = require('../views/article/post.component');
+var delete_component_1 = require('../views/article/delete.component');
 var routes = [
     {
         path: '',
@@ -30,6 +31,10 @@ var routes = [
     {
         path: 'post',
         component: post_component_1.PostComponent
+    },
+    {
+        path: 'delete',
+        component: delete_component_1.DeleteComponent
     }
 ];
 exports.appRouterProviders = [

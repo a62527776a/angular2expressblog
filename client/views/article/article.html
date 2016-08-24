@@ -1,1 +1,9 @@
+<div class="col-xs-12">
+    <div class="massage-card color-white background-white" *ngFor="let comment of comment"><h5 class="">{{comment.name}}:</h5><p>{{comment.content}}</p><small class="pull-right">{{comment.createDate}}</small></div>
+</div>
+<form class="col-xs-12">
+    <input id="comment_name" placeholder="请填写您的昵称" class="col-xs-6">
+    <textarea id="comment_content" placeholder="请填写您的留言" class="col-xs-12"></textarea>
+    <button (click)="postComment()" id="now_comment" class="col-xs-12 text-center bg-primary">提交留言</button>
+</form>
 <footer></footer>

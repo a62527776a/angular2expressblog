@@ -22,6 +22,15 @@ var articleSchema = new Schema({
     }
 });
 
+var commentSchema = new Schema({
+    name:String,
+    content:String,
+    createTime: {
+        type: Date,
+        default: Date.now()
+    }
+})
 
 exports.User = mongoose.model('User',userSchema);
 exports.article = mongoose.model('Article',articleSchema);
+exports.Comment = mongoose.model('Comment',commentSchema);

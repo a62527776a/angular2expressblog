@@ -6,7 +6,7 @@ import { UserComponent } from '../../client/views/user/user.component';
 import { ArticleDetailComponent } from '../../client/views/article/article-detail.component'
 import { LoginComponent } from "../views/user/login.component";
 import { PostComponent } from '../views/article/post.component';
-
+import { DeleteComponent } from '../views/article/delete.component';
 const routes: RouterConfig = [
     {
         path:'',
@@ -31,6 +31,10 @@ const routes: RouterConfig = [
     {
         path:'post',
         component:PostComponent
+    },
+    {
+        path:'delete',
+        component:DeleteComponent
     }
 ];
 
