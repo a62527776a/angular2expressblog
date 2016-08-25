@@ -32,7 +32,8 @@ export class CommentService {
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
 
-        let url = `${this.postArticleUrl}/${CommentModel._id}`;
+        let url = `${this.commentUrl}/${CommentModel._id}`;
+        console.log(this.commentUrl);
         return this.http
             .delete(url, {headers: headers})
             .toPromise()

@@ -7,6 +7,7 @@ import { ArticleDetailComponent } from '../../client/views/article/article-detai
 import { LoginComponent } from "../views/user/login.component";
 import { PostComponent } from '../views/article/post.component';
 import { DeleteComponent } from '../views/article/delete.component';
+import { DeleteCommentComponent } from '../views/article/deleteComment.component';
 const routes: RouterConfig = [
     {
         path:'',
@@ -35,6 +36,10 @@ const routes: RouterConfig = [
     {
         path:'delete',
         component:DeleteComponent
+    },
+    {
+        path:'deleteComment',
+        component:DeleteCommentComponent
     }
 ];
 

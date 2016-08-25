@@ -3,10 +3,10 @@ import { Headers,Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import { LoginModule } from '/client/data/login.module'
 
-
 @Injectable()
-export class LoginService{
+export class LoginService {
     private loginUrl = 'api/login';
+    private ifLoginUrl = 'api/ifLogin';
     constructor(private http:Http){
     }
     private handleError(error:any){
@@ -21,5 +21,10 @@ export class LoginService{
             .toPromise()
             .then(res => res.json())
             .catch(this.handleError);
+    }
+    ifLogin(){
+        return this.http.get(this.ifLoginUrl)
+            .toPromise()
+            .then(response => response.json())
     }
 }

@@ -1,5 +1,4 @@
 var app = require('../../app.js')
-var checkLogin = require('../script/checklogin');
 var models = require('../../database/models/models');
 var User = models.User;
 var Article = models.article;
@@ -7,7 +6,7 @@ var Comment = models.Comment
 var crypto = require('crypto');
 
 module.exports = function (app) {
-
+    var session = undefined;
     app.get('/',function(req,res){
         res.sendFile("/home/a62527776a/NetBeansProjects/myblog/client/index.html");
     });
@@ -37,6 +36,7 @@ module.exports = function (app) {
             user.password = null;
             delete user.password;
             req.session.user = user;
+            session = user;
         })
     });
     app.post('/api/register',function(req,res){
@@ -68,13 +68,11 @@ module.exports = function (app) {
             newUser.save(function(err, doc){
                 if(err){
                     console.error(err);
-                    return res.redirect('/register');
                 }
                 console.log('注册成功');
                 newUser.password = null;
                 delete newUser.password;
                 req.session.user = new User;
-                return res.redirect('/');
             })
         })
     });
@@ -100,7 +98,7 @@ module.exports = function (app) {
             res.send(art);
         });
     })
-    app.get('/article/article_upload',checkLogin.nologin);
+    app.get('/article/article_upload');
     app.get('/article/article_list',function(req,res){
         Article.find().exec(function(err,arts){
             if(err){
@@ -152,5 +150,22 @@ module.exports = function (app) {
             console.log('留言发布成功');
             res.send(doc);
         })
+    })
+    app.delete('/api/comment/:id',function(req,res){
+        var id = req.params.id;
+        Comment.remove({_id:id}).exec(function(err,arts){
+            if(err){
+                console.log(err);
+            }
+            res.send(arts);
+        })
+    })
+    app.get('/api/ifLogin',function(req,res){
+        console.log(session);
+        if(!session){
+            res.json([{login:'no'}])
+        } else {
+            res.json([{login:'yes'}])
+        }
     })
 }

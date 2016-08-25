@@ -1,0 +1,8 @@
+<div class="col-xs-12">
+    <table>
+        <tr class="col-xs-12" *ngFor="let comment of comment">
+            <a class="">{{comment.content}}</a>
+            <a (click)="delete(comment)" class="pull-right">删除</a>
+        </tr>
+    </table>
+</div>

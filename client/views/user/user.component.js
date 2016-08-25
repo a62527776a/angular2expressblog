@@ -11,19 +11,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var footer_component_1 = require("/client/component/footer/footer.component");
 var router_1 = require('@angular/router');
+var login_service_1 = require('/client/service/user.service/login.service');
 var UserComponent = (function () {
-    function UserComponent() {
+    function UserComponent(LoginService) {
+        this.LoginService = LoginService;
     }
+    ;
+    UserComponent.prototype.ifLogin = function () {
+        var _this = this;
+        this.LoginService.ifLogin().then(function (login) { return _this.login = login; });
+    };
+    UserComponent.prototype.ngOnInit = function () {
+        this.ifLogin();
+    };
     UserComponent = __decorate([
         core_1.Component({
             selector: 'user',
             templateUrl: '/client/views/user/user.html',
             styleUrls: ['./client/views/user/user.css'],
-            directives: [footer_component_1.FooterComponent, router_1.ROUTER_DIRECTIVES]
+            directives: [footer_component_1.FooterComponent, router_1.ROUTER_DIRECTIVES],
+            providers: [login_service_1.LoginService]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [(typeof (_a = typeof login_service_1.LoginService !== 'undefined' && login_service_1.LoginService) === 'function' && _a) || Object])
     ], UserComponent);
     return UserComponent;
+    var _a;
 }());
 exports.UserComponent = UserComponent;
 ;

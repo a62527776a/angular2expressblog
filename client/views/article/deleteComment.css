@@ -1,0 +1,14 @@
+table {
+    margin:50px auto !important;
+    border:1px solid white;
+}
+table * {
+    color:#337ab7;
+}
+tr {
+    padding:5px !important;
+    border:1px solid white;
+}
+td {
+    width:50%;
+}

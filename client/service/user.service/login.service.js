@@ -15,6 +15,7 @@ var LoginService = (function () {
     function LoginService(http) {
         this.http = http;
         this.loginUrl = 'api/login';
+        this.ifLoginUrl = 'api/ifLogin';
     }
     LoginService.prototype.handleError = function (error) {
         console.error('an error occurred', error);
@@ -27,6 +28,11 @@ var LoginService = (function () {
             .toPromise()
             .then(function (res) { return res.json(); })
             .catch(this.handleError);
+    };
+    LoginService.prototype.ifLogin = function () {
+        return this.http.get(this.ifLoginUrl)
+            .toPromise()
+            .then(function (response) { return response.json(); });
     };
     LoginService = __decorate([
         core_1.Injectable(), 

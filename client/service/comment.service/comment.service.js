@@ -38,7 +38,8 @@ var CommentService = (function () {
     CommentService.prototype.delete = function (CommentModel) {
         var headers = new http_1.Headers();
         headers.append('Content-Type', 'application/json');
-        var url = this.postArticleUrl + "/" + CommentModel._id;
+        var url = this.commentUrl + "/" + CommentModel._id;
+        console.log(this.commentUrl);
         return this.http
             .delete(url, { headers: headers })
             .toPromise()

@@ -1,4 +1,15 @@
-<div class="col-xs-12">
-    <small [routerLink]="['/login']" class="pull-right color-white">博主登录</small>
+<div *ngFor="let login of login" class="col-xs-12">
+    <small *ngIf="login.login == 'no'" [routerLink]="['/login']" class="pull-right color-white">博主登录</small>
+    <div  *ngIf="login.login == 'yes'">
+        <div class="text-right" [routerLink]="['/post']">
+            发表文章
+        </div>
+        <div class="text-right" [routerLink]="['/deleteComment']">
+            删除评论
+        </div>
+        <div class="text-right" [routerLink]="['/delete']">
+            删除文章
+        </div>
+    </div>
 </div>
 <footer></footer>
