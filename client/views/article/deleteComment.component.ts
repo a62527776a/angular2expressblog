@@ -28,4 +28,7 @@ export class DeleteCommentComponent implements OnInit {
     ngOnInit(){
         this.getComment();
     }
+    goBack(){
+        window.history.back();
+    }
 };

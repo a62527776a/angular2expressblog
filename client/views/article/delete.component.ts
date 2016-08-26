@@ -25,6 +25,9 @@ export class DeleteComponent implements OnInit {
     getArticle(){
         this.ArticleService.getArticle().then(article => this.article = article);
     }
+    goBack(){
+        window.history.back();
+    }
     ngOnInit(){
         this.getArticle();
     }

@@ -25,4 +25,10 @@ export class LoginComponent {
         user = {username:this.username.value,password:this.password.value};
         this.LoginService.login(user).then(login_status => this.login_status = login_status);
     }
+    goBack(){
+        window.history.back();
+    }
+    logout(){
+        this.LoginService.logout().then(login_status => this.login_status = login_status);
+    }
 };

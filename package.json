@@ -1,7 +1,7 @@
 {
-  "name": "myblog",
+  "name": "angular2,express,blog",
   "version": "0.0.1",
-  "description": "blog",
+  "description": "angular2 express blog",
   "main": "app.js",
   "scripts": {
     "start": "tsc && concurrently \"npm run tsc:w\" ",

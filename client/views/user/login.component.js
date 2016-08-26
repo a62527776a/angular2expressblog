@@ -23,6 +23,13 @@ var LoginComponent = (function () {
         user = { username: this.username.value, password: this.password.value };
         this.LoginService.login(user).then(function (login_status) { return _this.login_status = login_status; });
     };
+    LoginComponent.prototype.goBack = function () {
+        window.history.back();
+    };
+    LoginComponent.prototype.logout = function () {
+        var _this = this;
+        this.LoginService.logout().then(function (login_status) { return _this.login_status = login_status; });
+    };
     LoginComponent = __decorate([
         core_1.Component({
             selector: 'login',

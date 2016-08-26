@@ -24,6 +24,9 @@ var DeleteComponent = (function () {
         var _this = this;
         this.ArticleService.getArticle().then(function (article) { return _this.article = article; });
     };
+    DeleteComponent.prototype.goBack = function () {
+        window.history.back();
+    };
     DeleteComponent.prototype.ngOnInit = function () {
         this.getArticle();
     };

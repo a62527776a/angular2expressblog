@@ -27,6 +27,9 @@ var DeleteCommentComponent = (function () {
     DeleteCommentComponent.prototype.ngOnInit = function () {
         this.getComment();
     };
+    DeleteCommentComponent.prototype.goBack = function () {
+        window.history.back();
+    };
     DeleteCommentComponent = __decorate([
         core_1.Component({
             selector: 'delete',

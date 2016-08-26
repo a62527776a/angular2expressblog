@@ -22,6 +22,9 @@ var PostComponent = (function () {
         var article = { article_title: article_title.value, article_content: article_content.value };
         this.ArticleService.post(article).then(function (article) { return _this.article = article; });
     };
+    PostComponent.prototype.goBack = function () {
+        window.history.back();
+    };
     PostComponent = __decorate([
         core_1.Component({
             selector: 'post',

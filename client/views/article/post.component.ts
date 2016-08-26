@@ -23,4 +23,7 @@ export class PostComponent {
         let article = {article_title:article_title.value,article_content:article_content.value}
         this.ArticleService.post(article).then(article => this.article = article);
     }
+    goBack(){
+        window.history.back();
+    }
 };

@@ -16,6 +16,7 @@ var LoginService = (function () {
         this.http = http;
         this.loginUrl = 'api/login';
         this.ifLoginUrl = 'api/ifLogin';
+        this.logoutUrl = 'api/logout';
     }
     LoginService.prototype.handleError = function (error) {
         console.error('an error occurred', error);
@@ -31,6 +32,11 @@ var LoginService = (function () {
     };
     LoginService.prototype.ifLogin = function () {
         return this.http.get(this.ifLoginUrl)
+            .toPromise()
+            .then(function (response) { return response.json(); });
+    };
+    LoginService.prototype.Logout = function () {
+        return this.http.get(this.logoutUrl)
             .toPromise()
             .then(function (response) { return response.json(); });
     };

@@ -16,6 +16,9 @@ export class UserComponent implements OnInit {
     ifLogin(){
         this.LoginService.ifLogin().then(login => this.login = login)
     }
+    logout(){
+        this.LoginService.Logout().then(login => this.login = login)
+    }
     ngOnInit(){
         this.ifLogin();
     }

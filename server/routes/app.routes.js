@@ -168,4 +168,8 @@ module.exports = function (app) {
             res.json([{login:'yes'}])
         }
     })
+    app.get('/api/logout',function(req,res){
+        session = undefined;
+        res.json([{login:'no'}])
+    })
 }

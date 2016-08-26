@@ -21,6 +21,10 @@ var UserComponent = (function () {
         var _this = this;
         this.LoginService.ifLogin().then(function (login) { return _this.login = login; });
     };
+    UserComponent.prototype.logout = function () {
+        var _this = this;
+        this.LoginService.Logout().then(function (login) { return _this.login = login; });
+    };
     UserComponent.prototype.ngOnInit = function () {
         this.ifLogin();
     };
