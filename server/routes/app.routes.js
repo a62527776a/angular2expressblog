@@ -2,7 +2,8 @@ var app = require('../../app.js')
 var models = require('../../database/models/models');
 var User = models.User;
 var Article = models.article;
-var Comment = models.Comment
+var Comment = models.Comment;
+var Img = models.Img;
 var crypto = require('crypto');
 
 module.exports = function (app) {
@@ -171,5 +172,28 @@ module.exports = function (app) {
     app.get('/api/logout',function(req,res){
         session = undefined;
         res.json([{login:'no'}])
+    })
+    app.get('/api/photo',function(req,res){
+        Img.find().exec(function(err,doc){
+            if(err){
+                console.log(err);
+            }
+            res.json(doc);
+        });
+    })
+    app.post('/api/photo',function(req,res){
+        var img = new Img({
+            info: req.body.img_info,
+            data: req.body.img_data
+        });
+        img.save(function(err, doc){
+            if(err){
+                console.log(err);
+                res.json([{status:err}])
+            }
+            console.log('图片发布成功');
+            console.log('doc:'+doc);
+            res.json([{status:'200'}])
+        })
     })
 }

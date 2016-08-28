@@ -12,6 +12,9 @@
     <div [routerLink]="['/post']" *ngIf="login_status.login_status == 200">
         发表文章
     </div>
+    <div [routerLink]="['/postphoto']" *ngIf="login_status.login_status == 200">
+        上传图片
+    </div>
     <div [routerLink]="['/deleteComment']" *ngIf="login_status.login_status == 200">
         删除评论
     </div>

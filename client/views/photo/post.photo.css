@@ -1,0 +1,9 @@
+form {
+    margin-top:50px !important;
+    padding:15px !important;
+}
+form > * {
+    margin-bottom:5px !important;
+    padding:5px !important;
+    border-radius:5px;
+}

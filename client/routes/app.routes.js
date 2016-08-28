@@ -8,6 +8,8 @@ var login_component_1 = require("../views/user/login.component");
 var post_component_1 = require('../views/article/post.component');
 var delete_component_1 = require('../views/article/delete.component');
 var deleteComment_component_1 = require('../views/article/deleteComment.component');
+var post_photo_component_1 = require('../views/photo/post.photo.component');
+var photo_component_1 = require('../views/photo/photo.component');
 var routes = [
     {
         path: '',
@@ -40,6 +42,14 @@ var routes = [
     {
         path: 'deleteComment',
         component: deleteComment_component_1.DeleteCommentComponent
+    },
+    {
+        path: 'postphoto',
+        component: post_photo_component_1.PostPhotoComponent
+    },
+    {
+        path: 'photo',
+        component: photo_component_1.PhotoComponent
     }
 ];
 exports.appRouterProviders = [

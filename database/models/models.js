@@ -30,7 +30,16 @@ var commentSchema = new Schema({
         default: Date.now()
     }
 })
+var imgSchema = new Schema({
+    info:String,
+    data:String,
+    createTime: {
+        type: Date,
+        default: Date.now()
+    }
+})
 
 exports.User = mongoose.model('User',userSchema);
 exports.article = mongoose.model('Article',articleSchema);
 exports.Comment = mongoose.model('Comment',commentSchema);
+exports.Img = mongoose.model('Img',imgSchema)

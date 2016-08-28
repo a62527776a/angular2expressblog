@@ -8,6 +8,8 @@ import { LoginComponent } from "../views/user/login.component";
 import { PostComponent } from '../views/article/post.component';
 import { DeleteComponent } from '../views/article/delete.component';
 import { DeleteCommentComponent } from '../views/article/deleteComment.component';
+import { PostPhotoComponent } from '../views/photo/post.photo.component';
+import { PhotoComponent } from '../views/photo/photo.component';
 const routes: RouterConfig = [
     {
         path:'',
@@ -40,6 +42,14 @@ const routes: RouterConfig = [
     {
         path:'deleteComment',
         component:DeleteCommentComponent
+    },
+    {
+        path:'postphoto',
+        component:PostPhotoComponent
+    },
+    {
+        path:'photo',
+        component:PhotoComponent
     }
 ];
 
