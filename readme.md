@@ -11,3 +11,6 @@ angular2 express blog
 windows用户请修改/server/router/app.router下
 
 app.get('/',function(req,res){res.sendFile('+ 系统根目录到/client/index.html +')})
+ 
+
+第一次写 写的不好 还望给予建议
