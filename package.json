@@ -4,7 +4,7 @@
   "description": "angular2 express blog",
   "main": "app.js",
   "scripts": {
-    "start": "tsc && concurrently \"npm run tsc:w\" ",
+    "start": "tsc && concurrently \"tsc:w -p ./client\" ",
     "postinstall": "typings install",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
