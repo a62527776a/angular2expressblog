@@ -1,10 +1,10 @@
 {
-  "name": "angular2,express,blog",
+  "name": "angular2expressblog",
   "version": "0.0.1",
   "description": "angular2 express blog",
   "main": "app.js",
   "scripts": {
-    "start": "tsc && concurrently \"tsc:w -p ./client\" ",
+    "start": "\"tsc -w -p ./client\"",
     "postinstall": "typings install",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
@@ -28,8 +28,8 @@
     "connect-mongo": "^1.3.2",
     "core-js": "^2.4.0",
     "express": "^4.14.0",
-    "express-session": "^1.14.0",
-    "mongoose": "^4.5.7",
+    "express-session": "^1.14.1",
+    "mongoose": "^4.5.10",
     "reflect-metadata": "^0.1.3",
     "rxjs": "5.0.0-beta.6",
     "systemjs": "0.19.27",

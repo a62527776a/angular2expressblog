@@ -23,7 +23,7 @@ var PostPhotoComponent = (function () {
         var img_info = document.getElementById('img_info').value;
         reader.onload = function (event) {
             this.imgUrl = event.target.result;
-            box.innerHTML = '<img src = ' + this.imgUrl + '>';
+            box.innerHTML = '<img class="col-xs-12" src = ' + this.imgUrl + '>';
             console.log(this.imgUrl);
             that.PhotoService.postPhoto({ img_info: img_info, img_data: this.imgUrl }).then();
         };
@@ -32,6 +32,9 @@ var PostPhotoComponent = (function () {
     PostPhotoComponent.prototype.getPhoto = function () {
         var _this = this;
         this.PhotoService.getPhoto().then(function (photo) { return _this.photo = photo; });
+    };
+    PostPhotoComponent.prototype.goBack = function () {
+        window.history.back();
     };
     PostPhotoComponent.prototype.ngOnInit = function () {
         this.getPhoto();

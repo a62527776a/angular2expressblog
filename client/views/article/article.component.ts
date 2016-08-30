@@ -23,10 +23,18 @@ export class ArticleComponent implements OnInit{
     postComment(){
         let comment_name = document.getElementById('comment_name').value;
         let comment_content = document.getElementById('comment_content').value;
-        let comment = {comment_name:comment_name,comment_content:comment_content}
-        this.CommentService.postComment(comment).then(res => res.json())
-    }
-
+        let comment = {comment_name:comment_name,comment_content:comment_content};
+        let message_box = document.getElementById('message_box');
+        let mark = document.createElement('div');
+        mark.className = 'color-white background-white';
+        mark.style = 'height: 80px;width: 100%;margin: 10px 0 !important;padding: 5px 15px !important;';
+        this.CommentService.postComment(comment).then((res) => {
+             if(res[0].status == 200) {
+                message_box.appendChild(mark);
+                 mark.innerHTML = '<h5 class="" style="color:#337ab7">'+comment_name+':</h5><p style="color:#337ab7">'+comment_content+'</p><small class="pull-right" style="color:#337ab7">'+res[0].createTime+'</small>'
+             }
+        })
+    };
     ngOnInit(){
         this.getComment();
     }

@@ -19,7 +19,7 @@ export class PostPhotoComponent implements OnInit {
         let img_info = document.getElementById('img_info').value;
         reader.onload = function(event){
             this.imgUrl = event.target.result;
-            box.innerHTML='<img src = '+this.imgUrl+'>';
+            box.innerHTML='<img class="col-xs-12" src = '+this.imgUrl+'>';
             console.log(this.imgUrl);
             that.PhotoService.postPhoto({img_info:img_info,img_data:this.imgUrl}).then();
         }
@@ -27,6 +27,9 @@ export class PostPhotoComponent implements OnInit {
     }
     getPhoto(){
         this.PhotoService.getPhoto().then(photo => this.photo = photo);
+    }
+    goBack(){
+        window.history.back();
     }
     ngOnInit(){
         this.getPhoto();

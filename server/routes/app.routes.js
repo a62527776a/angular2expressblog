@@ -9,7 +9,7 @@ var crypto = require('crypto');
 module.exports = function (app) {
     var session = undefined;
     app.get('/',function(req,res){
-        res.sendFile("/home/a62527776a/NetBeansProjects/myblog/client/index.html");
+        res.sendFile('E:/work/angular2expressblog/client/index.html');
     });
     app.post('/api/login',function(req,res){
         var username = req.body.username;
@@ -145,11 +145,14 @@ module.exports = function (app) {
         });
 
         comment.save(function(err, doc){
+            var data = new Date();
+            console.log(data);
             if(err){
                 console.log(err);
+                res.json([{status:500,createTime:data}])
             }
             console.log('留言发布成功');
-            res.send(doc);
+            res.json([{status:200,createTime:data}])
         })
     })
     app.delete('/api/comment/:id',function(req,res){
